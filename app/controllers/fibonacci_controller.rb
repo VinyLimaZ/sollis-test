@@ -2,7 +2,7 @@
 
 class FibonacciController < ApplicationController
   def fibonacci
-    render json: { range: fibonacci_range, status: status_response }
+    render json: { sequence: fibonacci_range, status: status_response }
   end
 
   private
@@ -19,6 +19,6 @@ class FibonacciController < ApplicationController
   end
 
   def fibonacci_params
-    params.permit(:range)
+    params.require(:fibonacci).permit(:range)
   end
 end
