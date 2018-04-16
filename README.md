@@ -1,24 +1,43 @@
-# README
+Sollis Test
+=======================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What are all this shit?
 
-Things you may want to cover:
+Hello guys, I'm Vinicius and this is my solution to the problem that you
+brought to me :D
 
-* Ruby version
+My solution consists in one endpoint: `POST /fibonacci`, to calculate the fibonacci sequence;
+You need to pass `range: POSITIVE_INTEGER` param;
 
-* System dependencies
+Because of convention, I didn't use the `quantidade`, like was on e-mail...
 
-* Configuration
+## Configuration
 
-* Database creation
+Ruby version: 2.4.3
 
-* Database initialization
+Rails version: 5.2
 
-* How to run the test suite
+## How to
 
-* Services (job queues, cache servers, search engines, etc.)
+First clone the project and run `rspec` to guarantee that all is fine;
+Second you run: `rails s` (I didn't use any table);
 
-* Deployment instructions
+## POST Problem
 
-* ...
+`GET` is cool, you can do anywhere, if you have internet, obvious.
+
+But `POST` you need some tools to do the job
+The most simple for doing this, in my opinion, it's `wget`
+
+Doing:
+
+`wget -qO- localhost:PORT/fibonacci --header='Content-Type: application/json' --method=POST --body-data '{"range": 45 }'`
+
+_PORT default is 3000_
+
+You will get the json on your screen, like a hacker!
+
+Enjoy and hire me, please (͡ ° ͜ʖ ͡ °)
+
+ps: I did the most simple solution for the fibonacci recursion, I will do a
+refactor with a better algorithm today!
