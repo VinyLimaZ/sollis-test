@@ -7,6 +7,8 @@ class Fibonacci
   end
 
   def sequence
+    return invalid_range if @range < 0
+
     fibonacci_ary = []
 
     range.times do |value|
@@ -17,6 +19,10 @@ class Fibonacci
   end
 
   private
+
+  def invalid_range
+    I18n.t('fibonacci.errors.negative_range')
+  end
 
   def to_s(fibonacci_ary)
     fibonacci_ary.join(', ')

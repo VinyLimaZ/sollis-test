@@ -19,4 +19,15 @@ describe Fibonacci do
       it { is_expected.to eq fibonacci_return }
     end
   end
+
+  context 'receives a invalid' do
+    let(:param) { { range: '-1' } }
+    let(:failure_message) do
+      'Negative value is invalid for range! Please use a positive'
+    end
+
+    subject { described_class.new(param).sequence }
+
+    it { is_expected.to eq failure_message }
+  end
 end
