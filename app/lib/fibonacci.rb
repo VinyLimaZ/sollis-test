@@ -10,15 +10,9 @@ class Fibonacci
   end
 
   def sequence
-    return invalid_range if @range.negative?
+    return invalid_range if range.negative?
 
-    fibonacci_ary = []
-
-    range.times do |value|
-      fibonacci_ary << fib(value)
-    end
-
-    to_s(fibonacci_ary)
+    fib(range).join(', ')
   end
 
   private
@@ -27,14 +21,20 @@ class Fibonacci
     I18n.t('fibonacci.errors.negative_range')
   end
 
-  def to_s(fibonacci_ary)
-    fibonacci_ary.join(', ')
-  end
+  def fib(range)
+    fibonacci_ary = []
 
-  def fib(value)
-    return 0 if value < 1
-    return 1 if value <= 2
+    (range).times do |n|
+      if n < 1
+        f = 0
+      elsif n < 2
+        f = 1
+      else
+        f = fibonacci_ary[n - 1] + fibonacci_ary[n - 2]
+      end
+      fibonacci_ary[n] = f
+    end
 
-    fib(value - 2) + fib(value - 1)
+    fibonacci_ary
   end
 end
