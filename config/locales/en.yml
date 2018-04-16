@@ -30,4 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  fibonacci:
+    errors:
+      negative_range: 'Negative value is invalid for range! Please use a positive'
