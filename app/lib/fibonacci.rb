@@ -1,5 +1,8 @@
-class Fibonacci
+# frozen_string_literal: true
+# Klass Fibonacci
+# returns Fibonacci sequence based on range value
 
+class Fibonacci
   attr_reader :range
 
   def initialize(param)
@@ -7,7 +10,7 @@ class Fibonacci
   end
 
   def sequence
-    return invalid_range if @range < 0
+    return invalid_range if @range.negative?
 
     fibonacci_ary = []
 
