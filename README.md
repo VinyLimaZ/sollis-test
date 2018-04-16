@@ -1,6 +1,8 @@
 Sollis Test
 =======================
 
+Semaphore: [![Build Status](https://semaphoreci.com/api/v1/vinylimaz/sollis-test/branches/master/badge.svg)](https://semaphoreci.com/vinylimaz/sollis-test)
+
 ## What are all this shit?
 
 Hello guys, I'm Vinicius and this is my solution to the problem that you
